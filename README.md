@@ -24,12 +24,22 @@ Android DevicePolicyManager服务提供了提供了三种设备管理角色：
 
 ### DeviceOwner的特点
 
-1. 一个设备只能设置一个**DeviceOwner**角色，设置后不能在设置取消（按钮置灰），不能卸载（卸载按钮还在，系统会提示你不能卸载）。
-2. 要让一个app成为**DeviceOwner**，首先他得是一个**DeviceAdmin**，**DeviceAdmin**的配置流程请参考百度。
-3. 不必刻意去激活**DeviceAdmin**，系统在设置**DeviceOwner**的过程中会自动先激活**DeviceAdmin**，这也是**DeviceOwner**拥有**DeviceAdmin**所有能力的原因。
-4. 第三方应用和系统应用都没有权限设置**DeviceOwner**，官方提供两种设置**DeviceOwner**应用的方法：
-   - adb shell命令
-   - 通过nfc（请查阅google 官方demo）
+1，一个设备只能设置一个**DeviceOwner**角色，设置后不能在设置取消（按钮置灰），不能卸载（卸载按钮还在，系统会提示你不能卸载）
+
+
+
+2，要让一个app成为**DeviceOwner**，首先他得是一个**DeviceAdmin**，**DeviceAdmin**的配置流程请参考百度。
+
+
+
+3，不必刻意去激活**DeviceAdmin**，系统在设置**DeviceOwner**的过程中会自动先激活**DeviceAdmin**，这也是**DeviceOwner**拥有**DeviceAdmin**所有能力的原因。
+
+
+
+4，第三方应用和系统应用都没有权限设置**DeviceOwner**，Android官方值提供两种设置**DeviceOwner**应用的方法：
+
+- adb shell命令
+- 通过nfc（请查阅google 官方demo）
 
 
 
