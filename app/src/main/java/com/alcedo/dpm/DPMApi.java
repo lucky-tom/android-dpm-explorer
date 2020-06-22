@@ -36,7 +36,7 @@ public class DPMApi {
     private Context context;
 
 
-    private DPMApi (Context c){
+    public DPMApi (Context c){
         this.context=c;
         //获取设备管理服务
         dpm=(DevicePolicyManager) context.getSystemService(Context.DEVICE_POLICY_SERVICE);
