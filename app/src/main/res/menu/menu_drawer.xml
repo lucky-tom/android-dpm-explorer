@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <!-- 有选中效果的菜单组
+    <group android:checkableBehavior="single">
+        <item
+
+            android:id="@+id/nav_camera"
+            android:icon="@mipmap/ic_launcher"
+            android:title="Import" />
+        <item
+            android:id="@+id/nav_gallery"
+            android:icon="@mipmap/ic_launcher"
+            android:title="Gallery" />
+        <item
+            android:id="@+id/nav_slideshow"
+            android:icon="@mipmap/ic_launcher"
+            android:title="Slideshow" />
+        <item
+            android:id="@+id/nav_manage"
+            android:icon="@mipmap/ic_launcher"
+            android:title="Tools" />
+    </group>-->
+
+    <!-- 没有选中效果的普通菜单条目, title子标题-->
+    <item android:title="控制台">
+        <menu>
+            <item
+                android:id="@+id/nav_switch"
+                android:icon="@mipmap/ic_launcher"
+            android:title="开关" />
+            <item
+                android:id="@+id/nav_app"
+                android:icon="@mipmap/ic_launcher"
+                android:title="APP控制" />
+        </menu>
+    </item>
+
+</menu>

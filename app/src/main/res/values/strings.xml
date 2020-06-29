@@ -1,3 +1,31 @@
 <resources>
     <string name="app_name">android-dpm-explorer</string>
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+
+
+    <string name="switch_header">启/禁用</string>
+    <string name="switch_title_statusBar">状态栏</string>
+    <string name="switch_title_camera">相机</string>
+    <string name="switch_title_screenCapture">截屏</string>
+    <string name="switch_title_volumeMuted">静音</string>
+    <string name="switch_title_systime">根据网络自动确定系统时间</string>
+    <string name="switch_title_callId">来电显示</string>
+    <string name="switch_title_contactsSearch">搜索联系人</string>
+
+    <string name="app_header">应用控制</string>
+
 </resources>

@@ -48,7 +48,7 @@ Android DevicePolicyManager服务提供了提供了三种设备管理角色：
 本案通过 adb shell指令来使能app成为DeviceOwner：
 
 ```java
-adb shell dpm set-device-owner --name Test com.alcedo.dpm/.DPMReceiver
+adb shell dpm set-device-owner  com.alcedo.dpm/.DPMReceiver
 ```
 
 **问题1：设备上存在账户**
@@ -61,9 +61,9 @@ java.lang.IllegalStateException: Not allowed to set the device owner because the
 
 ```java
 1，adb shell dumpsys account   列出所有账户
-2，adb shell pm hide com.xxx.xxx 隐藏提供账户的app
-3，adb shell dpm set-device-owner --name Test com.alcedo.dpm/.DPMReceiver
-4，adb shell pm unhide com.xxx.xxx 恢复提供账户的app
+2，adb shell pm hide com.xxx.xxx 隐藏提供账户的app (需要先adb root)
+3，adb shell dpm set-device-owner  com.alcedo.dpm/.DPMReceiver
+4，adb shell pm unhide com.xxx.xxx 恢复提供账户的app(需要先adb root)
 
 如果2，4不行，就adb shell pm remove-user USER_ID 根据id删除user。有一种情况，提示不能删除user_id为0的，只能参考方法2了。
 ```
