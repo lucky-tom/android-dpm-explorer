@@ -1,0 +1,44 @@
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory app:title="@string/switch_header">
+
+        <SwitchPreferenceCompat
+            app:key="camera"
+            app:summaryOff="可以正常使用摄像头"
+            app:summaryOn="已经禁止使用摄像头"
+            app:title="@string/switch_title_camera" />
+
+        <SwitchPreferenceCompat
+            app:key="screenCapture"
+            app:summaryOff="可以正常截屏"
+            app:summaryOn="禁止截屏"
+            app:title="@string/switch_title_screenCapture" />
+
+        <SwitchPreferenceCompat
+            app:key="volumeMuted"
+            app:summaryOff="静音已经解除"
+            app:summaryOn="已静音"
+            app:title="@string/switch_title_volumeMuted" />
+
+        <SwitchPreferenceCompat
+            app:key="systime"
+            app:summaryOff="可以正常根据网络自动确定系统时间"
+            app:summaryOn="已禁止根据网络自动确定系统时间"
+            app:title="@string/switch_title_systime" />
+
+
+        <SwitchPreferenceCompat
+            app:key="profileCallerId"
+            app:summaryOff="可以正常使用来电显示功能"
+            app:summaryOn="已禁止来电显示功能"
+            app:title="@string/switch_title_callId" />
+
+        <SwitchPreferenceCompat
+            app:key="profileContactsSearch"
+            app:summaryOff="可以正常使用搜索联系人功能"
+            app:summaryOn="已禁止搜索联系人功能"
+            app:title="@string/switch_title_contactsSearch" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

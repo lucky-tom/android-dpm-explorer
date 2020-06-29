@@ -1,0 +1,26 @@
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+    <PreferenceCategory app:title="@string/app_header">
+
+
+        <Preference
+            app:key="hidden"
+            app:title="隐藏/显示应用"
+            app:summary="可以控制一个app的显示状态"
+            app:useSimpleSummaryProvider="true" />
+
+        <Preference
+            app:key="uninstall"
+            app:title="指定应用是否可卸载"
+            app:summary="设置为True的app不可卸载，卸载的时候系统会警告"
+            app:useSimpleSummaryProvider="true" />
+
+        <Preference
+            app:key="suspended"
+            app:title="指定应用挂起"
+            app:summary="设置为True的app被挂起，不能执行活动"
+            app:useSimpleSummaryProvider="true" />
+
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

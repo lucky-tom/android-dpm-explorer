@@ -1,10 +1,29 @@
 <resources>
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
+    <style name="ToolBarStyle" parent="@style/BaseToolBarStyle"/>
 
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="BaseToolBarStyle" parent="@style/ThemeOverlay.AppCompat">
+        <!--系统图标颜色-->
+        <item name="android:textColorSecondary">@color/white</item>
+        <item name="android:actionOverflowMenuStyle">@style/overflowMenuStyle</item>
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
+    <style name="overflowMenuStyle" parent="@style/Widget.AppCompat.PopupMenu.Overflow">
+        <item name="android:dropDownWidth">wrap_content</item>
+        <item name="overlapAnchor">false</item>
+        <item name="android:popupBackground">@color/white</item>
+        <item name="android:dropDownVerticalOffset">-4dp</item>
+        <item name="android:dropDownHorizontalOffset">0dp</item>
+    </style>
 </resources>

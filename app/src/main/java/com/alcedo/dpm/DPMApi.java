@@ -4,6 +4,7 @@ import android.app.admin.DevicePolicyManager;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
@@ -246,7 +247,7 @@ public class DPMApi {
 
 
     /**
-     * 禁止/启用修改时间
+     * 禁止/启用，据网络自动确定系统时间，设置true后，即使在设置里面打开自动确定日期和时间，有网络也不会同步时间。
      * true:禁止修改  false:可以修改
      */
     public void setAutoTimeRequired(boolean required) {
@@ -259,7 +260,7 @@ public class DPMApi {
 
 
     /**
-     * 获取是否已经禁用修改时间
+     * 获取是否已经禁用据网络自动确定系统时间
      *
      */
     public boolean getAutoTimeRequired() {
@@ -354,15 +355,20 @@ public class DPMApi {
     /**
      * 隐藏/显示app
      *
+     * nexus7上的测试效果为，如果设置一个app为隐藏，app图标找不到，在设置--》应用列表可以找到。
+     * adb shell pm unhide或 hide 需要先adb  root，否则
+     * 会报“ java.lang.SecurityException: Neither user 2000 nor current process has android.permission.MANAGE_USERS.”
+     *
      * @param packageName 包名
      * @param hiddlen true:隐藏，false:显示
      */
-    public void setApplicationHidden(String packageName, boolean hiddlen) {
+    public boolean setApplicationHidden(String packageName, boolean hiddlen) {
         if(isDeviceOwnerApp()) {
-            dpm.setApplicationHidden(componentName, packageName, hiddlen);
+           return dpm.setApplicationHidden(componentName, packageName, hiddlen);
         }else {
             Toast.makeText(context, "请先激活成为-->设备拥有者", Toast.LENGTH_SHORT).show();
         }
+        return false;
     }
 
 
@@ -373,15 +379,39 @@ public class DPMApi {
      * @return true:隐藏，false:没有隐藏
      */
     public boolean isApplicationHidden(String packageName) {
+        return dpm.isApplicationHidden(componentName, packageName);
+    }
 
-        if (isDeviceOwnerApp()) {
-            return dpm.isApplicationHidden(componentName, packageName);
+
+    /**
+     * 挂起应用
+     *
+     * @param packageName 包名
+     * @param suspended true:挂起  false:取消挂起
+     */
+    @RequiresApi(api = Build.VERSION_CODES.N)
+    public void setPackagesSuspended(String[] packageName, boolean suspended) {
+        if(isDeviceOwnerApp()) {
+            dpm.setPackagesSuspended(componentName, packageName, suspended);
         }else {
             Toast.makeText(context, "请先激活成为-->设备拥有者", Toast.LENGTH_SHORT).show();
         }
-
-        return false;
     }
+
+
+
+    /**
+     * 查询app是否被挂起
+     *
+     * @param packageName 包名
+     * @return true:被挂起，false:没有被挂起
+     */
+    @RequiresApi(api = Build.VERSION_CODES.N)
+    public boolean isPackageSuspended(String packageName) throws PackageManager.NameNotFoundException {
+        return dpm.isPackageSuspended(componentName, packageName);
+    }
+
+
 
 
     /**
@@ -600,16 +630,21 @@ public class DPMApi {
      * PERMISSION_GRANT_STATE_DEFAULT  默认
      * PERMISSION_GRANT_STATE_DENIED   自动拒绝
      * PERMISSION_GRANT_STATE_GRANTED  自动赋予
+     *
+     *
+     * @return true:成功 false:失败
+     *
+
      */
     @RequiresApi(api = Build.VERSION_CODES.M)
-    public void setPermissionGrantState(String packageName, String permission, int grantState){
+    public boolean setPermissionGrantState(String packageName, String permission, int grantState){
 
         if(isDeviceOwnerApp()) {
-            dpm.setPermissionGrantState(componentName, packageName,permission,grantState);
+            return dpm.setPermissionGrantState(componentName, packageName,permission,grantState);
         }else {
             Toast.makeText(context, "请先激活成为-->设备拥有者", Toast.LENGTH_SHORT).show();
         }
-
+        return false;
     }
 
 
@@ -659,7 +694,7 @@ public class DPMApi {
 
 
     /**
-     * 获取wifi macdiz
+     * 获取wifi 地址
      *
      * @return  wifi mac地址
      */
@@ -683,9 +718,81 @@ public class DPMApi {
         }
     }
 
+    /**
+     * 是否静音
+     * true:设置静音  false:关闭静音
+     */
+    public boolean isMasterVolumeMuted(){
+        if(isDeviceOwnerApp()) {
+            return dpm.isMasterVolumeMuted(componentName);
+        }else {
+            Toast.makeText(context, "请先激活成为-->设备拥有者", Toast.LENGTH_SHORT).show();
+        }
+        return false;
+    }
 
 
 
+
+
+    /**
+     * 禁止/开启搜索联系人功能
+     * @param on
+     *
+     * true:设置静音  false:关闭静音
+     */
+    @RequiresApi(api = Build.VERSION_CODES.N)
+    public void setCrossProfileContactsSearchDisabled(boolean on){
+        if(isDeviceOwnerApp()) {
+            dpm.setCrossProfileContactsSearchDisabled(componentName,on);
+        }else {
+            Toast.makeText(context, "请先激活成为-->设备拥有者", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    /**
+     * 查询搜索联系人功能状态
+     * true:禁用  false:启用
+     */
+    @RequiresApi(api = Build.VERSION_CODES.N)
+    public boolean getCrossProfileContactsSearchDisabled(){
+        if(isDeviceOwnerApp()) {
+            return dpm.getCrossProfileContactsSearchDisabled(componentName);
+        }else {
+            Toast.makeText(context, "请先激活成为-->设备拥有者", Toast.LENGTH_SHORT).show();
+        }
+        return false;
+    }
+
+
+
+
+    /**
+     * 禁止/开启来电显示功能
+     * @param on
+     *
+     * true:禁用  false:启用
+     */
+    public void setCrossProfileCallerIdDisabled(boolean on){
+        if(isDeviceOwnerApp()) {
+            dpm.setCrossProfileCallerIdDisabled(componentName,on);
+        }else {
+            Toast.makeText(context, "请先激活成为-->设备拥有者", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    /**
+     * 查询来电显示功能状态
+     * true:禁用  false:启用
+     */
+    public boolean getCrossProfileCallerIdDisabled(){
+        if(isDeviceOwnerApp()) {
+            return dpm.getCrossProfileCallerIdDisabled(componentName);
+        }else {
+            Toast.makeText(context, "请先激活成为-->设备拥有者", Toast.LENGTH_SHORT).show();
+        }
+        return false;
+    }
 
 
 

@@ -48,7 +48,7 @@ Android DevicePolicyManager服务提供了提供了三种设备管理角色：
 本案通过 adb shell指令来使能app成为DeviceOwner：
 
 ```java
-adb shell dpm set-device-owner --name Test com.alcedo.dpm/.DPMReceiver
+adb shell dpm set-device-owner  com.alcedo.dpm/.DPMReceiver
 ```
 
 **问题1：设备上存在账户**
@@ -61,9 +61,9 @@ java.lang.IllegalStateException: Not allowed to set the device owner because the
 
 ```java
 1，adb shell dumpsys account   列出所有账户
-2，adb shell pm hide com.xxx.xxx 隐藏提供账户的app
-3，adb shell dpm set-device-owner --name Test com.alcedo.dpm/.DPMReceiver
-4，adb shell pm unhide com.xxx.xxx 恢复提供账户的app
+2，adb shell pm hide com.xxx.xxx 隐藏提供账户的app (需要先adb root)
+3，adb shell dpm set-device-owner  com.alcedo.dpm/.DPMReceiver
+4，adb shell pm unhide com.xxx.xxx 恢复提供账户的app(需要先adb root)
 
 如果2，4不行，就adb shell pm remove-user USER_ID 根据id删除user。有一种情况，提示不能删除user_id为0的，只能参考方法2了。
 ```
@@ -94,10 +94,12 @@ java.lang.IllegalStateException: Trying to set device owner but device is alread
 
 ##参考文章：
 
-> [Android DeviceOwner 应用的能力]: https://blog.csdn.net/visionliao/article/details/84767383	"博主：怒草"
-> [一键设置 DeviceAdmin/ProfileOwner/DeviceOwner 应用]: https://blog.csdn.net/visionliao/article/details/84768035	"博主：怒草"
-> [Android之解决Gigaset手机不能设置DeviceOwner权限提示already provisioned问题]: https://blog.csdn.net/u011068702/article/details/53191952?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-4.nonecase&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-4.nonecase	"博主：chen.yu"
-> [android权限级别探索（三），设置 DeviceOwner及api收集]: https://blog.csdn.net/qq_35501560/article/details/105948631?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-3.nonecase&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-3.nonecase	"博主：炭烤葫芦娃"
-> [安卓玩机@太极 免ROOT使用Xposed模块]: https://www.cnblogs.com/qq438649499/p/12096017.html	"博主：默月"
 
-感谢巨人们
+
+[Android DeviceOwner 应用的能力]: https://blog.csdn.net/visionliao/article/details/84767383	"博主：怒草"
+[一键设置 DeviceAdmin/ProfileOwner/DeviceOwner 应用]: https://blog.csdn.net/visionliao/article/details/84768035	"博主：怒草"
+[Android之解决Gigaset手机不能设置DeviceOwner权限提示already provisioned问题]: https://blog.csdn.net/u011068702/article/details/53191952?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-4.nonecase&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-4.nonecase	"博主：chen.yu"
+[android权限级别探索（三），设置 DeviceOwner及api收集]: https://blog.csdn.net/qq_35501560/article/details/105948631?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-3.nonecase&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-3.nonecase	"博主：炭烤葫芦娃"
+[安卓玩机@太极 免ROOT使用Xposed模块]: https://www.cnblogs.com/qq438649499/p/12096017.html	"博主：默月"
+
+
