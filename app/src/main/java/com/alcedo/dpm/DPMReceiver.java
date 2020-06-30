@@ -7,7 +7,19 @@ import android.os.UserHandle;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-
+/**
+ * @file DPMReceiver.java
+ *
+ * @brief dpm需要实现的组件
+ *
+ * @author wudd
+ *
+ * @email 814668064@qq.com
+ *
+ * @date 20-6-30
+ *
+ * @attention {使用此类需要注意什么}
+ */
 public class DPMReceiver extends DeviceAdminReceiver {
 
     @Override

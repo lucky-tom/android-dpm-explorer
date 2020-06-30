@@ -6,7 +6,19 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 
 import com.alcedo.dpm.DPMApi;
-
+/**
+ * @file DPMViewModel.java
+ *
+ * @brief vm层
+ *
+ * @author wudd
+ *
+ * @email 814668064@qq.com
+ *
+ * @date 20-6-30
+ *
+ * @attention {使用此类需要注意什么}
+ */
 public class DPMViewModel extends AndroidViewModel {
 
     DPMApi dpmApi;

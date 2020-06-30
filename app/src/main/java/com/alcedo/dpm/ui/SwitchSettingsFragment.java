@@ -12,7 +12,19 @@ import androidx.preference.SwitchPreferenceCompat;
 
 import com.alcedo.dpm.R;
 import com.alcedo.dpm.viewmodel.DPMViewModel;
-
+/**
+ * @file SwitchSettingsFragment.java
+ *
+ * @brief 一些启用/禁用的功能控制界面
+ *
+ * @author wudd
+ *
+ * @email 814668064@qq.com
+ *
+ * @date 20-6-30
+ *
+ * @attention {使用此类需要注意什么}
+ */
 public class SwitchSettingsFragment extends PreferenceFragmentCompat {
 
 
@@ -58,7 +70,7 @@ public class SwitchSettingsFragment extends PreferenceFragmentCompat {
 
 
     /**
-     * 处理相机偏好
+     * 处理截屏偏好
      */
     public void initScreenCapturePreference() {
 

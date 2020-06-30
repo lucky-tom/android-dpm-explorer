@@ -12,7 +12,19 @@ import androidx.preference.SwitchPreferenceCompat;
 
 import com.alcedo.dpm.R;
 import com.alcedo.dpm.viewmodel.DPMViewModel;
-
+/**
+ * @file AppSettingsFragment.java
+ *
+ * @brief app控制界面
+ *
+ * @author wudd
+ *
+ * @email 814668064@qq.com
+ *
+ * @date 20-6-30
+ *
+ * @attention {使用此类需要注意什么}
+ */
 public class AppSettingsFragment extends PreferenceFragmentCompat {
 
     DPMViewModel dpmViewModel;

@@ -23,7 +23,19 @@ import com.alcedo.dpm.adapter.PackageAdapter;
 import com.alcedo.dpm.viewmodel.DPMViewModel;
 
 import java.util.List;
-
+/**
+ * @file AppDialogFragment.java
+ *
+ * @brief 遍历全部app，并提供开关进行控制
+ *
+ * @author wudd
+ *
+ * @email 814668064@qq.com
+ *
+ * @date 20-6-30
+ *
+ * @attention {使用此类需要注意什么}
+ */
 public class AppDialogFragment extends DialogFragment{
 
     DPMViewModel dpmViewModel;
