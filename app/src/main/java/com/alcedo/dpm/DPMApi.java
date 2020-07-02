@@ -247,7 +247,9 @@ public class DPMApi {
 
 
     /**
-     * 禁止/启用，据网络自动确定系统时间，设置true后，即使在设置里面打开自动确定日期和时间，有网络也不会同步时间。
+     * 禁止/启用，根据据网络自动确定系统时间的选项，设置true后，设置中的使用网络自动同步选项置灰，不能切换。
+     *
+     * （很奇怪nexus7上，切换回到后台的这个设置页面的switch还可以操作，退出重新进去才是最新状态）。
      * true:禁止修改  false:可以修改
      */
     public void setAutoTimeRequired(boolean required) {

@@ -22,8 +22,8 @@
 
         <SwitchPreferenceCompat
             app:key="systime"
-            app:summaryOff="可以正常根据网络自动确定系统时间"
-            app:summaryOn="已禁止根据网络自动确定系统时间"
+            app:summaryOff="可以切换自动确定系统时间的开关按钮"
+            app:summaryOn="已禁止切换根据网络自动确定系统时间开关按钮"
             app:title="@string/switch_title_systime" />
 
 

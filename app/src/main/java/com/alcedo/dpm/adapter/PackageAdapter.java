@@ -16,7 +16,19 @@ import com.alcedo.dpm.DPMApi;
 import com.alcedo.dpm.R;
 
 import java.util.List;
-
+/**
+ * @file PackageAdapter.java
+ *
+ * @brief 适配器
+ *
+ * @author wudd
+ *
+ * @email 814668064@qq.com
+ *
+ * @date 20-6-30
+ *
+ * @attention {使用此类需要注意什么}
+ */
 public class PackageAdapter extends RecyclerView.Adapter<PackageAdapter.MyViewHolder> {
     DPMApi dpmApi;
     private Context context;
@@ -37,6 +49,7 @@ public class PackageAdapter extends RecyclerView.Adapter<PackageAdapter.MyViewHo
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+        //不关心，不复用
         holder.setIsRecyclable(false);
         String packageName = packageList.get(position);
         holder.tv.setText(packageName);
@@ -46,7 +59,8 @@ public class PackageAdapter extends RecyclerView.Adapter<PackageAdapter.MyViewHo
         holder.sw.setOnCheckedChangeListener((buttonView, isChecked) -> {
 
            boolean is =  dpmApi.setApplicationHidden(packageName,isChecked);
-            Toast.makeText(context,""+is,Toast.LENGTH_SHORT).show();
+           Toast.makeText(context,""+is,Toast.LENGTH_SHORT).show();
+
         });
     }
 
