@@ -92,9 +92,7 @@ java.lang.IllegalStateException: Trying to set device owner but device is alread
 
 ------
 
-##参考文章：
-
-
+## 参考文章：
 
 [Android DeviceOwner 应用的能力]: https://blog.csdn.net/visionliao/article/details/84767383	"博主：怒草"
 [一键设置 DeviceAdmin/ProfileOwner/DeviceOwner 应用]: https://blog.csdn.net/visionliao/article/details/84768035	"博主：怒草"
