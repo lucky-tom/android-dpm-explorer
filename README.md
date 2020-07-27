@@ -94,14 +94,14 @@ java.lang.IllegalStateException: Trying to set device owner but device is alread
 
 ## 参考文章：
 
-[Android DeviceOwner 应用的能力]: https://blog.csdn.net/visionliao/article/details/84767383	"博主：怒草"
+[Android DeviceOwner 应用的能力] : https://blog.csdn.net/visionliao/article/details/84767383	"博主：怒草"
 
-[一键设置 DeviceAdmin/ProfileOwner/DeviceOwner 应用]: https://blog.csdn.net/visionliao/article/details/84768035	"博主：怒草"
+[一键设置 DeviceAdmin/ProfileOwner/DeviceOwner 应用] : https://blog.csdn.net/visionliao/article/details/84768035	"博主：怒草"
 
-[Android之解决Gigaset手机不能设置DeviceOwner权限提示already provisioned问题]: https://blog.csdn.net/u011068702/article/details/53191952?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-4.nonecase&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-4.nonecase	"博主：chen.yu"
+[Android之解决Gigaset手机不能设置DeviceOwner权限提示already provisioned问题] : https://blog.csdn.net/u011068702/article/details/53191952?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-4.nonecase&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-4.nonecase	"博主：chen.yu"
 
-[android权限级别探索（三），设置 DeviceOwner及api收集]: https://blog.csdn.net/qq_35501560/article/details/105948631?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-3.nonecase&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-3.nonecase	"博主：炭烤葫芦娃"
+[android权限级别探索（三），设置 DeviceOwner及api收集] : https://blog.csdn.net/qq_35501560/article/details/105948631?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-3.nonecase&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-3.nonecase	"博主：炭烤葫芦娃"
 
-[安卓玩机@太极 免ROOT使用Xposed模块]: https://www.cnblogs.com/qq438649499/p/12096017.html	"博主：默月"
+[安卓玩机@太极 免ROOT使用Xposed模块] : https://www.cnblogs.com/qq438649499/p/12096017.html	"博主：默月"
 
 
